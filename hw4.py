@@ -4,7 +4,7 @@ Prepared by Andrew, Emilio, and Prithvi
 
 You might find certain default Python packages immensely helpful.
 """
-
+import collections
 # Good luck!
 
 """
@@ -13,7 +13,16 @@ most_common_char
 Given an input string s, return the most common character in s.
 """
 def most_common_char(s):
-	pass
+	if s == None:
+		return None;
+	charDict = {}
+	for char in s:
+		if char not in charDict:
+			charDict[char] = 1
+		else:
+			charDict[char] += 1
+	return max(charDict, key=charDict.get)
+
 
 
 """
@@ -194,6 +203,4 @@ Example 2:
 		[1, 2]
 """
 def zero_sum_subarray(arr):
-    pass 
-
-
+    pass
