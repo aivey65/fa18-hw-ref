@@ -46,7 +46,13 @@ Example 2:
 		None
 """
 def alphabet_finder(s):
-	pass
+	if len(s) < 26:
+		return None
+	the_string = s[0:26].lower()
+	for i in range(97, 123):
+		if chr(i) not in the_string:
+			return None
+		return the_string
 
 
 """
@@ -108,7 +114,21 @@ Example 3:
 		False
 """
 def string_my_one_true_love(s):
-	pass
+	charDict = {}
+	for char in s:
+		if char not in charDict:
+			charDict[char] = 1
+		else:
+			charDict[char] += 1
+	change = False
+	tempIndex = list(charDict)[0]
+	for keyIndex in charDict:
+		if not charDict[keyIndex] == charDict[tempIndex]:
+			if change == True:
+				return False
+			change = True
+		temp = keyIndex
+	return True
 
 
 """
@@ -124,6 +144,10 @@ Example:
 		[[1920, 80], [1940, 22], [1961, 10]]
 	Return:
 		1961
+	step 1:
+	find the youngest year (first number smaller than all the other first numbers).
+	step 2:
+	find the fi
 """
 def alive_people(data):
 	pass
