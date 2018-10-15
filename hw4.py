@@ -52,7 +52,7 @@ def alphabet_finder(s):
 	for i in range(97, 123):
 		if chr(i) not in the_string:
 			return None
-		return the_string
+		return s[0:26]
 
 
 """
@@ -71,7 +71,20 @@ Example:
 		[1, 6]
 """
 def longest_unique_subarray(arr):
-	pass
+	longestDictIndex = 0
+	longestDictLength = 0 #lol that name
+	newArr = []
+	addIndex = True
+	for num in range(0, len(arr)):
+		if arr(num) not in newArr:
+			if addIndex == True:
+				longestDictIndex = n
+				addIndex = False
+			newArr.append(num)
+		else:
+			if len(tempDict) > longestDictLength:
+				longestDictLength = len(tempDict)
+	return [longestDictIndex, longestDictLength]
 
 
 """
